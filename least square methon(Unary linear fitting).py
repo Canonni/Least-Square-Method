@@ -49,7 +49,7 @@ def draw(data_x, data_y_new, data_y_old):
     mpl.rcParams['font.sans-serif'] = ['SimHei']
     mpl.rcParams['axes.unicode_minus'] = False
     plt.title("一元线性拟合数据")
-    plt.legend(loc="upper left")
+    plt.legend(loc="upper left")                    #标注显示在左上角
     plt.show()
 
 
