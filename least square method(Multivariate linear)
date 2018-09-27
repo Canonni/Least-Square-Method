@@ -52,5 +52,4 @@ newY = calculate(x1, x2, x3, parameters)
 for m in newY:
     fit_y.append(int(m))
 print (fit_y)
-#=Y_new.tolist()
 draw( x1, x2, y, fit_y)
