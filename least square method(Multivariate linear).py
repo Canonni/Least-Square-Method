@@ -5,7 +5,10 @@ import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 import math
 
+
+
 #多元线性拟合#
+
 def calculate_parameter(data_x1,data_x2,data_x3,data_y):
 
     a1 = mat(data_x1).T
@@ -20,6 +23,10 @@ def calculate_parameter(data_x1,data_x2,data_x3,data_y):
     parameter = (A_T*A).I*A_T*B
     return parameter
 
+
+
+#计算拟合后的y参数
+
 def calculate(data_x1, data_x2, data_x3, parameters):
     fitting_data_y = []
     i = 0
@@ -28,9 +35,13 @@ def calculate(data_x1, data_x2, data_x3, parameters):
         i += 1
         fitting_data_y.append(result)
     return fitting_data_y
+ 
+
+
+# 创建绘图函数对象
 
 def draw( x1, x2, old_y, new_y):
-    # 创建绘图函数对象
+   
     fig = plt.figure()
     # 创建Axes3D对象，让其包含图像3D坐标
     ax = Axes3D(fig)
@@ -50,6 +61,6 @@ fit_y = []
 parameters=calculate_parameter( x1, x2, x3, y)
 newY = calculate(x1, x2, x3, parameters)
 for m in newY:
-    fit_y.append(int(m))
+    fit_y.append(float(m))
 print (fit_y)
 draw( x1, x2, y, fit_y)
